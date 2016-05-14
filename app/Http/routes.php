@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'funcionesController@index');
+Route::get('/login', 'funcionesController@login');
+Route::get('/registro', 'funcionesController@registro');
