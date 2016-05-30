@@ -3,11 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SGCE</title>
-	<link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}" />
+	<link rel="stylesheet" href="{{ asset('css/bootstrapCelurean.css') }}" />
+	<style>
+		body{
+			background: linear-gradient(to right, yellow, white);
+		}
+	</style>
 </head>
 <body>
 	<!--Menú-->
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 		    <div class="navbar-header">
 		    	<a class="navbar-brand" href="{{url('/')}}">Sistema Generador de Curriculum Empresarial</a>
@@ -25,15 +30,8 @@
 			<div class="col-xs-12">
 				<div class="jumbotron">
   					<h1>Bienvenido a SGCE</h1>
-  					<p>	Tell me why
-						wae mami mami jakku heundeullini
-						nan yeogi yeogi ne yeope itjanhni
-						jeonsin charyeo Lion heart
-						nan aega ta
-						nae mami mami deoneun sikji anhge
-						nan yeogijeogi ttwinoneun neoui mam
-						gildeurillae Lion heart... (=^.^=)</p>
-  					<p><a class="btn btn-primary btn-lg" href="{{url('/login')}}" role="button">Empezar!</a></p>
+  					<p>Nankurinaisa</p>
+  					<p><a class="btn btn-primary btn-lg" href="{{url('/login')}}" role="button">Empezar !</a></p>
 				</div>
 			</div>
 		</div>
