@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Usuario;
+use App\Empresa;
 
 use App\Http\Requests;
 
@@ -28,9 +30,18 @@ class funcionesController extends Controller
 		return view('registro');
 	}
 
-	public function registrar(){
- 
-    	return view('login');
+	public function registrar(Request $datos){
+        $usuario=$datos->input('usuario');
+        $password=$datos->input('password');
+        $correo_electronico=$datos->input('correo_electronico');
+      
+        $nuevo= new Usuario();
+        $nuevo->usuario=$usuario;
+        $nuevo->password=$password;
+        $nuevo->correo_electronico=$correo_electronico;
+        $nuevo->save();
+
+        return view('login');
     }
 	
 	public function principal()

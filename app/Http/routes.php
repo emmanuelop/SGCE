@@ -15,7 +15,7 @@ Route::get('/', 'funcionesController@index');
 Route::get('/login', 'funcionesController@login');
 Route::get('/iniciarSesion', 'funcionesController@iniciarSesion');
 Route::get('/registro', 'funcionesController@registro');
-Route::get('/registrar', 'funcionesController@registrar');
+Route::post('/registrar', 'funcionesController@registrar');
 
 Route::get('/principal', 'funcionesController@principal');
 Route::get('/perfil', 'funcionesController@perfil');

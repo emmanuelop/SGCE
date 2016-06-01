@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="{{ asset('css/bootstrapCelurean.css') }}" />
 	<style>
 		body{
-			background: linear-gradient(to right, yellow, white);
+			background: linear-gradient(to right, #1A9FB3, white);
 		}
 	</style>
 </head>
@@ -30,7 +30,7 @@
 			<div class="col-xs-12">
 				<div class="jumbotron">
   					<h1>Bienvenido a SGCE</h1>
-  					<p>Nankurinaisa</p>
+  					<p>La mejor opción para ti</p>
   					<p><a class="btn btn-primary btn-lg" href="{{url('/login')}}" role="button">Empezar !</a></p>
 				</div>
 			</div>
