@@ -54,11 +54,6 @@ class funcionesController extends Controller
 		return view('perfil');
 	}
 
-	public function editarPerfil()
-	{
-		return view('editarPerfil');
-	}
-
 	public function perfilGuardar()
 	{
 		return view('perfil');

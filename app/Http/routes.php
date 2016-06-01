@@ -19,7 +19,6 @@ Route::post('/registrar', 'funcionesController@registrar');
 
 Route::get('/principal', 'funcionesController@principal');
 Route::get('/perfil', 'funcionesController@perfil');
-Route::get('/editarPerfil', 'funcionesController@editarPerfil');
 Route::get('/perfilGuardar', 'funcionesController@perfilGuardar');
 
 Route::get('/cerrarSesion', 'funcionesController@cerrarSesion');

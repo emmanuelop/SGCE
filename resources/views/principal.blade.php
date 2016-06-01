@@ -15,6 +15,33 @@
 			background: linear-gradient(to right, #1A9FB3, white);
 		}
 	</style>
+
+	<script>
+		function editar(){
+			document.getElementById('empresa').disabled=false;
+			document.getElementById('calle').disabled=false;
+			document.getElementById('colonia').disabled=false;
+			document.getElementById('codigo_postal').disabled=false;
+			document.getElementById('delegacion').disabled=false;
+			document.getElementById('entidad_federativa').disabled=false;
+			document.getElementById('telefono').disabled=false;
+			document.getElementById('correo_electronico').disabled=false;
+			document.getElementById('mision').disabled=false;
+			document.getElementById('vision').disabled=false;
+			document.getElementById('rfc').disabled=false;
+			document.getElementById('lugar_origen').disabled=false;
+			document.getElementById('fecha').disabled=false;
+			document.getElementById('representante_legal').disabled=false;
+			document.getElementById('servicios').disabled=false;
+
+
+			document.getElementById('guardar').disabled=false;
+			document.getElementById('guardar').style.visibility= 'visible';
+
+			document.getElementById('editarPerfil').disabled=true;
+			document.getElementById('editarPerfil').style.visibility= 'hidden';
+		} 
+	</script>
 </head>
 <body>
 	<!--Menú-->
