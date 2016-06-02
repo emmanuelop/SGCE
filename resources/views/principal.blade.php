@@ -34,7 +34,6 @@
 			document.getElementById('representante_legal').disabled=false;
 			document.getElementById('servicios').disabled=false;
 
-
 			document.getElementById('guardar').disabled=false;
 			document.getElementById('guardar').style.visibility= 'visible';
 
