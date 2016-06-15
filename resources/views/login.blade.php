@@ -6,8 +6,12 @@
 	<link rel="stylesheet" href="{{ asset('css/bootstrapCelurean.css') }}" />
 	<style>
 		body{
-			background: linear-gradient(to right, #1A9FB3, white);
-		}
+	        background: linear-gradient(#1A9FB3, white);
+	    }
+	    html,body{
+	      	height: 100%;
+	      	margin: 0px;
+	    }
 	    .login {
 	        margin: 0px auto;
 	      	float: initial;
@@ -38,13 +42,20 @@
 						<form action="iniciarSesion">
 							<div class="input-group" style="margin-top: 13px;">
 								<span class="input-group-addon glyphicon glyphicon-user" id="usuario"></span>
-								<input type="text" class="form-control" placeholder="Usuario" aria-describedby="sizing-addon2">
+								<input type="text" name="usuario" class="form-control" placeholder="Usuario" aria-describedby="sizing-addon2">
 							</div>
 							<div class="input-group">
 								<span class="input-group-addon glyphicon glyphicon-lock" id="password"></span>
-								<input type="text" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon2">
+								<input type="password" name="password" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon2">
 							</div>
-							<button style="margin-top: 10px;" type="submit" class="btn btn-success pull-right">Iniciar Sesión</button></a>
+							@if (Session::has('success-message'))
+		                    <div class="input-group input-group-lg" style="float: right; margin-top: 10px;">
+		                        <span class="input-group-addon glyphicon glyphicon-remove alert-danger" style="font-size: 12px;font-weight: bold;background: #ff7b7b;height: 0px;border-radius: 10px;">{{ Session::get('success-message') }}</span>
+		                        <button type="submit" class="btn btn-success pull-right">Iniciar Sesión</button>
+		                        </div>
+		                    @else
+		                        <button style="margin-top: 10px;" type="submit" class="btn btn-success pull-right">Iniciar Sesión</button>
+		                    @endif
 						</form>
 					</div>
 					<div class="col-xs-12 col-sm-4 abajo" style="border-left:1px solid #ccc;height:120px">

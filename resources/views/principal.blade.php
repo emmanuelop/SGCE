@@ -12,13 +12,21 @@
 	<link rel="stylesheet" href="{{ asset('css/bootstrapCelurean.css') }}" />
 	<style>
 		body{
-			background: linear-gradient(to right, #1A9FB3, white);
-		}
+	        background: linear-gradient(#1A9FB3, white);
+	    }
+	    html,body{
+	      	height: 100%;
+	      	margin: 0px;
+	    }
 	</style>
 
 	<script>
 		function editar(){
-			document.getElementById('empresa').disabled=false;
+			
+			document.getElementById('logo').disabled=false;
+			document.getElementById('logo').style.visibility= 'visible';
+			document.getElementById('logo').style.display= 'initial';
+			document.getElementById('nombre_empresa').disabled=false;
 			document.getElementById('calle').disabled=false;
 			document.getElementById('colonia').disabled=false;
 			document.getElementById('codigo_postal').disabled=false;
@@ -61,9 +69,12 @@
 	    <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
 	    	<ul class="nav navbar-nav">
 	        	<li><a href="{{url('/perfil')}}">Perfil</a></li>
+	        	<li><a target="_blank" href="{{url('/curriculumPDF')}}">Imprimir Curriculum</a></li>
+	        	<li><a target="_blank" href="{{url('/')}}">Generar Pagina Web</a></li>
 	      	</ul>
 	     	      	
 	      	<ul class="nav navbar-nav navbar-right">
+	      		<li><a style="background: transparent; font-weight: bold; font-size: 16px;">Bienvenido: {{$usuario->usuario}}</a></li>
 	        	<li><a href="{{url('/cerrarSesion')}}">Cerrar Sesión</a></li>
 	      	</ul>
 	    </div>

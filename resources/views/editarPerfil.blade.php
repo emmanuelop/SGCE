@@ -2,10 +2,11 @@
 
 @section('editarPerfil')
 <div class="col-xs-12 well">
-	<form action="perfilGuardar" method="post">
+	<form action="save" method="post">
 		<div class="form-group">
 			<label for="">Logo:</label>
 			
+			<input type="file" class="form-control" name="file">
 		</div>
 		<div class="form-group">
 			<label for="">Nombre de la Empresa:</label>
