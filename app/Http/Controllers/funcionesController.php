@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Usuario;
 use App\Empresa;
 use Hash;
 use Flash;
 use Redirect;
+
+use Auth;
 
 use App\Http\Requests;
 
@@ -15,14 +16,14 @@ class funcionesController extends Controller
 {
     public function index()
 	{
-		return view('inicio');
+		if (Auth::guest()){
+			return view('inicio');
+		}
+		return redirect()->to("/home");       
 	}
 
-	public function login()
-	{
-		return view('login');
-	}
 
+	/*
 	public function iniciarSesion(Request $datos)
 	{
 		session_start();
@@ -63,13 +64,7 @@ class funcionesController extends Controller
 	
 	public function principal()
 	{
-		//Validar
-		session_start();
-        if (!isset($_SESSION['username']) ){
-            return redirect()->to("/");
-        }
-        $usuario = Usuario::where('usuario', '=' , $_SESSION['username'])->first();
-        return view('principal', compact('usuario'));
+        return view('principal');
 	}
 
 	public function perfil()
@@ -156,6 +151,6 @@ class funcionesController extends Controller
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('Curriculum_'.$empresa->nombre_empresa.'');
-	}
+	}*/
 }
 	

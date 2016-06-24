@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use App\Empresa;
+
 class AuthController extends Controller
 {
     /*
@@ -28,7 +30,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new authentication controller instance.
@@ -63,6 +65,11 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $empresa = new Empresa();
+        $empresa->usuario = $data['name'];
+        $empresa->logo = "imagenes/logos/logo.jpg";
+        $empresa->save();
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

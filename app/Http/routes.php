@@ -12,15 +12,18 @@
 */
 
 Route::get('/', 'funcionesController@index');
-Route::get('/login', 'funcionesController@login');
-Route::get('/iniciarSesion', 'funcionesController@iniciarSesion');
-Route::get('/registro', 'funcionesController@registro');
-Route::post('/registrar', 'funcionesController@registrar');
+//Route::get('/login', 'funcionesController@login');
+//Route::get('/iniciarSesion', 'funcionesController@iniciarSesion');
+//Route::get('/registro', 'funcionesController@registro');
+//Route::post('/registrar', 'funcionesController@registrar');
 
-Route::get('/principal', 'funcionesController@principal');
-Route::get('/perfil', 'funcionesController@perfil');
-Route::post('/perfilGuardar', 'funcionesController@perfilGuardar');
+Route::auth();
+//Route::get('/principal', 'HomeController@principal');
+Route::get('/home', 'HomeController@home');
+Route::get('/perfil', 'HomeController@perfil');
+Route::post('/perfilGuardar', 'HomeController@perfilGuardar');
 
-Route::get('/cerrarSesion', 'funcionesController@cerrarSesion');
+//Route::get('/cerrarSesion', 'funcionesController@cerrarSesion');
+Route::get('/curriculumPDF', 'HomeController@curriculumPDF');
+Route::get('/paginaWeb{id}', 'HomeController@paginaWeb');
 
-Route::get('/curriculumPDF', 'funcionesController@curriculumPDF');

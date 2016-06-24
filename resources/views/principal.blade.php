@@ -20,7 +20,7 @@
 	    }
 	</style>
 
-	<script>
+	<!--<script>
 		function editar(){
 			
 			document.getElementById('logo').disabled=false;
@@ -48,44 +48,42 @@
 			document.getElementById('editarPerfil').disabled=true;
 			document.getElementById('editarPerfil').style.visibility= 'hidden';
 		} 
-	</script>
+	</script>-->
 </head>
 <body>
 	<!--Menú-->
 	<nav class="navbar navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-	      <a class="navbar-brand" href="{{url('/principal')}}">Sistema Generador de Curriculum Empresarial</a>
-	    </div>
+             	<a class="navbar-brand" style="background: transparent; font-weight: bold; font-size: 18px;">Bienvenido a SGCE {{ Auth::user()->name }}</a>
+            </div>
 
-	    <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
-	    	<ul class="nav navbar-nav">
-	        	<li><a href="{{url('/perfil')}}">Perfil</a></li>
-	        	<li><a target="_blank" href="{{url('/curriculumPDF')}}">Imprimir Curriculum</a></li>
-	        	<li><a target="_blank" href="{{url('/')}}">Generar Pagina Web</a></li>
-	      	</ul>
-	     	      	
-	      	<ul class="nav navbar-nav navbar-right">
-	      		<li><a style="background: transparent; font-weight: bold; font-size: 16px;">Bienvenido: {{$usuario->usuario}}</a></li>
-	        	<li><a href="{{url('/cerrarSesion')}}">Cerrar Sesión</a></li>
-	      	</ul>
-	    </div>
-	  </div>
-	</nav>
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{url('/home')}}">Inicio</a></li>
+		        	<li><a href="{{url('/perfil')}}">Perfil</a></li>
+		        	<li><a target="_blank" href="{{url('/curriculumPDF')}}">Imprimir Curriculum</a></li>
+		        	<li><a target="_blank" href="{{url('/paginaWeb')}}{{ Auth::user()->name }}">Generar Pagina Web</a></li>
+                </ul>
 
+                <ul class="nav navbar-nav navbar-right">
+                	<li><a href="{{url('/logout')}}">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 	<div class="container">
 		<div class="row">
+			@yield('home')
 			@yield('perfil')
-			@yield('editarPerfil')
 		</div>	
 	</div>
 </body>

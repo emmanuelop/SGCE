@@ -22,9 +22,16 @@
 	</style>
 </head>
 <body>
+<div class="col-xs-12">
+	<nav>
+		<ul class="pager">
+			<li class="previous"><a href="{{url('/login')}}"><span aria-hidden="true" class="glyphicon glyphicon-arrow-left"></span> Atras</a></li>
+		</ul>
+	</nav>
+</div>
+
 	<div class="container">
-		<div class="row">
-		
+		<div class="row">	
 			<div class="col-xs-6 registro">
 				<div class="panel panel-info">
 					<div class="panel-heading">
